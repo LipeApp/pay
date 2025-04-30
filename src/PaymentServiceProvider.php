@@ -6,6 +6,7 @@ use Illuminate\Support\ServiceProvider;
 use Lipe\Payment\Gateways\ClickGateway;
 use Lipe\Payment\Gateways\IpakYuliGateway;
 use Lipe\Payment\Gateways\PaymeGateway;
+use Lipe\Payment\Filament\PaymentServiceProvider as FilamentPaymentServiceProvider;
 
 class PaymentServiceProvider extends ServiceProvider
 {
@@ -18,6 +19,8 @@ class PaymentServiceProvider extends ServiceProvider
         $this->app->singleton('payment', function ($app) {
             return new PaymentManager($app);
         });
+
+        $this->app->register(FilamentPaymentServiceProvider::class);
     }
 
     public function boot(): void
@@ -30,6 +33,7 @@ class PaymentServiceProvider extends ServiceProvider
             __DIR__.'/../database/migrations' => database_path('migrations'),
         ], 'payment-gateways-migrations');
 
+        $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
         $this->loadRoutesFrom(__DIR__.'/../routes/api.php');
     }
 }

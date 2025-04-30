@@ -1,6 +1,6 @@
 <?php
 
-namespace UzPaymentGateways\DTO;
+namespace Lipe\Payment\DTO;
 
 class PaymentDTO
 {
@@ -26,4 +26,4 @@ class PaymentDTO
             ...$this->params
         ];
     }
-} 
+}
