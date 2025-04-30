@@ -1,0 +1,33 @@
+{
+    "name": "lipe/payment",
+    "description": "Payment gateways integration for Uzbekistan (Payme, Click, Ipak Yuli)",
+    "type": "library",
+    "license": "MIT",
+    "keywords": [
+        "payment",
+        "uzbekistan",
+        "payme",
+        "click",
+        "ipak yuli",
+        "laravel"
+    ],
+    "autoload": {
+        "psr-4": {
+            "Lipe\\Payment\\": "src/"
+        }
+    },
+    "require": {},
+    "require-dev": {
+        "phpunit/phpunit": "^9.0",
+        "orchestra/testbench": "^7.0",
+        "mockery/mockery": "^1.5"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Lipe\\Payment\\PaymentServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "stable"
+}
