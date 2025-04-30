@@ -5,7 +5,7 @@
 ## Установка
 
 ```bash
-composer require lipeapp/pay
+composer require lipe/payment
 ```
 
 ## Настройка
